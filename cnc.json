@@ -37,7 +37,7 @@
   },
   {"tag": "axis trouble",
     "patterns": ["axis over limited"],
-    "responses": ["Press "O.T.REL" key, use the handwheel rotate the axis to reverse direction", "Check if the limit switch is broken."]
+    "responses": ["Press 'O.T.REL' key, use the handwheel rotate the axis to reverse direction", "Check if the limit switch is broken."]
   },
   {"tag": "axis trouble",
     "patterns": ["axis can't go back to zero"],
@@ -49,7 +49,7 @@
   },
   {"tag": "spindle trouble",
     "patterns": ["spindle noise"],
-    "responses": ["Lubricate the spindle belt, "Adjust the belt tension", "Replace the spindle belt or spindle."]
+    "responses": ["Lubricate the spindle belt", "Adjust the belt tension", "Replace the spindle belt or spindle."]
   },
   {"tag": "coolant pump",
     "patterns": ["coolant pump can't drain"],
