@@ -23,6 +23,6 @@
   {"tag": "annual maintenance",
     "patterns": ["annual maintenance", "annually", "How to perform annual maintenance", "do annual maintenance"],
     "responses": ["1) Check the vertical accuracy of every axis, then adjust 2) Check whether the lubrication oil tube and connector whether there are oil leak or damage"]
-  },  
+  }  
 ]
 }
