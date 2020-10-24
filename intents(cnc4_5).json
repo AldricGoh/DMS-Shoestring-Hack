@@ -1,0 +1,108 @@
+{"intents": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+    "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["Bye", "See you later", "Goodbye"],
+    "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+  },
+  {"tag": "tool not in position",
+    "patterns": ["not in positioned", "could not get the sensor signal"],
+    "responses": ["1) Make the tool magazine forward/backward rotation by hand to see if the alarm can be eliminated, if 1027 alarm appears, operate the magnetic valve, by hand and rotate the tool magazine by hand too, then eliminate the alarm 2) Check if the sensor switch is broken or not"]
+  },
+  {"tag": "tool pot not down",
+    "patterns": ["tool collets cannot go down"],
+    "responses": ["Check the circuit"]
+  },
+  {"tag": "tool no. not found",
+    "patterns": ["cannot find tool number"],
+    "responses": ["Please re-tidy the tool number"]
+  },
+  {"tag": "arm 90 error",
+    "patterns": ["arm 90 degree error"],
+    "responses": ["Replace the sensor"]
+  },
+  {"tag": "tool not unclamp",
+    "patterns": ["tool unclamp"],
+    "responses": ["Check the limit switch of tool loosen"]
+  },
+  {"tag": "arm 270 error",
+    "patterns": ["arm 270 degree error"],
+    "responses": ["check the sensor switch"]
+  },
+  {"tag": "tool pot not up",
+    "patterns": ["tool collects cannot go upward"],
+    "responses": ["Check sensor switch and circuit"]
+  },
+  {"tag": "arm jog mode",
+    "patterns": ["arm jog mode error"],
+    "responses": ["Restart the controller"]
+  },
+  {"tag": "tool not clamp",
+    "patterns": ["tool is not clamp well"],
+    "responses": ["Check the limit switch"]
+  },
+  {"tag": "arm home pos error",
+    "patterns": ["arm home point error"],
+    "responses": ["check the sensor switch"]
+  },
+  {"tag": "ATC LS error",
+    "patterns": ["ATC limit error"],
+    "responses": ["Check the spindle tool loosen/clamp can test the signal at the same time, adjust the limit position"]
+  },
+  {"tag": "T CODE = SP",
+    "patterns": ["TCODE = Spindle tool"],
+    "responses": ["Reset the tool magazine when Tcode is not equal to spindle tool"]
+  },
+  {"tag": "Door not close",
+    "patterns": ["door is not close"],
+    "responses": ["Shut the door"]
+  },
+  {"tag": "4 axis clamp",
+    "patterns": ["The 4th axis is not clamped"],
+    "responses": ["Clmap the 4th well"]
+  },
+  {"tag": "VMC540",
+    "patterns": ["Machine model: VMC 540", "Net Weight: 3500KG", "Main Power: 10KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 540, Net Weight: 3500KG, Main Power: 10KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "VMC650",
+    "patterns": ["Machine model: VMC 650", "Net Weight: 4500KG", "Main Power: 15KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 650, Net Weight: 4500KG, Main Power: 15KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "VMC850",
+    "patterns": ["Machine model: VMC 850", "Net Weight: 5300KG", "Main Power: 15KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 850, Net Weight: 5300KG, Main Power: 15KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "VMC960",
+    "patterns": ["Machine model: VMC 960", "Net Weight: 4000KG", "Main Power: 15KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 960, Net Weight: 4000KG, Main Power: 15KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "VMC1060",
+    "patterns": ["Machine model: VMC 1060", "Net Weight: 8000KG", "Main Power: 20KVA", "Circuit breaker: 60A", "Power line diameter: 16mm2"],
+    "responses": ["Machine model: VMC 1060, Net Weight: 8000KG, Main Power: 20KVA, Circuit breaker: 60A, Power line diameter: 16mm2"]
+  },
+  {"tag": "VMC1270",
+    "patterns": ["Machine model: VMC 1270", "Net Weight: 10000KG", "Main Power: 20KVA", "Circuit breaker: 60A", "Power line diameter: 16mm2"],
+    "responses": ["Machine model: VMC 1270, Net Weight: 10000KG, Main Power: 20KVA, Circuit breaker: 60A, Power line diameter: 16mm2"]
+  },
+  {"tag": "VMC1370",
+    "patterns": ["Machine model: VMC 1370", "Net Weight: 12000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1370, Net Weight: 12000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "VMC1580",
+    "patterns": ["Machine model: VMC 1580", "Net Weight: 15000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1580, Net Weight: 15000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "VMC1690",
+    "patterns": ["Machine model: VMC 1690", "Net Weight: 18000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1690, Net Weight: 18000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "VMC1890",
+    "patterns": ["Machine model: VMC 1890", "Net Weight: 18000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1890, Net Weight: 18000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  }
+]
+}
