@@ -8,10 +8,7 @@
     "patterns": ["Bye", "See you later", "Goodbye"],
     "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
   },
-  {"tag": "thanks",
-    "patterns": ["Thanks", "Thank you", "That's helpful"],
-    "responses": ["Happy to help!", "Any time!", "My pleasure"]
-  },
+
   {"tag": "hours",
     "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
     "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
@@ -38,14 +35,25 @@
     "responses": ["For rentals today please call 1-800-MYMOPED", "Same-day rentals please call 1-800-MYMOPED"],
     "context_filter": "rentalday"
   },
-  {"tag": "not flat",
-    "patterns": ["The spindle bearing is loose", "The gibs of X, Y axis are loose", "The processing amount is too much"],
-    "responses": ["Adjust the spindle bearing gaps", "Adjust the gib's gap"],
+  {"tag": "problem: not flat",
+    "patterns": ["The spindle bearing is loose", "The gibs of X, Y axis are loose", "The processing amount is too much", "The machine is cool"],
+    "responses": ["Adjust the spindle bearing gaps", "Adjust the gib's gap", "wiggle your toes", "Have some vodka man", "Leave the company"],
     "context_filter": "not flat"
-  }
-  {"tag": "shakes",
+  },
+  
+  {"tag": "problem: shakes",
     "patterns": ["The machine is located unsteadily", "The cutting condition is not good"],
-    "responses": ["Retighten the machine", "Choose suitable cutting feed"],
+    "responses": ["Retighten the machine", "Choose suitable cutting feed"]
+  },
+
+  {"tag": "positive",
+    "patterns": ["Good","Thanks","Nice", "That works", "Perfect", "Awesome"],
+    "responses": ["Cheers!"]
+  },
+
+  {"tag": "negative",
+    "patterns": ["Nope", "Doesn't work", "Wrong", "Nothing happened"],
+    "responses": ["Sorry!"]
   }
 ]
 }
