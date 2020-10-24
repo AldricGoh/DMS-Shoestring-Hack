@@ -39,13 +39,14 @@
     "context_filter": "rentalday"
   },
   {"tag": "not flat",
-    "patterns": ["The spindle bearing is loose", "The gibs of X, Y axis are loose", "The processing amount is too much"],
+    "patterns": ["The spindle bearing is loose", "The gibs of X, Y axis are loose", "The processing amount is too much", "The machine is cool"],
     "responses": ["Adjust the spindle bearing gaps", "Adjust the gib's gap"],
     "context_filter": "not flat"
-  }
+  },
+  
   {"tag": "shakes",
     "patterns": ["The machine is located unsteadily", "The cutting condition is not good"],
-    "responses": ["Retighten the machine", "Choose suitable cutting feed"],
+    "responses": ["Retighten the machine", "Choose suitable cutting feed"]
   }
 ]
 }
