@@ -1,0 +1,72 @@
+{"intents": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+    "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["Bye", "See you later", "Goodbye"],
+    "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+  },
+  {"tag": "Chipping",
+    "patterns": ["chipping", "The part of tre cutting edge which is not in cut is damaged by chip hammering, leading to poor surface and excessive flank wear"],
+    "responses": ["increase cutting speed", "reduce feed at the beginning of the cut", "improve stability", "increase number of passes", "use a full-profile insert"]
+  },
+  {"tag": "BUE",
+    "patterns": ["Built-up edge", "BUE", "Poor surface finish and cutting edge frittering when the built-up edge is torn away", "cutting zone temperature is too low", "very sticky material, such as low-carbon steel, stainless steels and aluminium"],
+    "responses": ["increase cutting speed or feed", "use oil mist or cutting fluid"]
+  },
+  {"tag": "crater wear",
+    "patterns": ["crater wear", "excessive wear causing a weakened edge", "cutting edge breakthrough on the trailing edge leading to poor surface finish"],
+    "responses": ["Reduce speed to reduce temperature", "Reduce feed"]
+  },
+  {"tag": "thermal cracks",
+    "patterns": ["thermal cracks", "temperature variations from varying cutting fluid supply or intermittent machining leading to small cracks perpendicular to the cutting edge, insert frittering and poor surface finish"],
+    "responses": ["apply cutting fluid in large amounts, or not at all", "reduce cutting speed"]
+  },
+  {"tag": "plastic deformation",
+    "patterns": ["plastic deformation", "cutting temperature and pressure too high"],
+    "responses": ["reduce cutting speed", "reduce feed"]
+  },
+  {"tag": "flank wear",
+    "patterns": ["flank wear", "rapid wear causing poor surface finish or out of tolerance", "Excessive wear resulting in short tool life, burr formation on component, poor surface finish, heat generation and excessive noise", "uneven wear resulting in corner damage, short tool life, bad surface finish and high noise level"],
+    "responses": ["Restate one of the causes: The part of the cutting edge which is not in cut is damaged by chip hammering leading to poor surface and excessive flank wear, vibration, re-cutting of chips, Burr formation on component, poor surface finish, heat generation, excessive noise, tool run-out, short tool life, bad surface finish, high noise level, radial forces too high"]
+  },
+  {"tag": "Flank wear 1",
+    "patterns": ["The part of the cutting edge which is not in cut is damaged by chip hammering leading to poor surface and excessive flank wear"],
+    "responses": [" increase cutting speed", "Reduce feed at the beginning of the cut", "Improve stability", "Increase number of passes", "Use a full-profile insert"]
+  },
+   {"tag": "Flank wear 2",
+    "patterns": ["vibration", "re-cutting of chips", "Burr formation on component", "poor surface finish", "heat generation", "excessive noise"],
+    "responses": ["increase feed fz", "reduce speed", "use down milling", "evacuate chips effectively using compressed air", "check recommended cutting data"]
+  },
+  {"tag": "Flank wear 3",
+    "patterns": ["tool run-out", "short tool life", "bad surface finish", "high noise level", "radial forces too high"],
+    "responses": ["increase chuck and collet", "minimize tool overhang", "fewer teeth in cut", "split axial cutting depth ap, into more than one pass", "Reduce feed, fz", "reduce cutting speed, vc", "high speed machining requires shallow passes", "improve clamping of tool and workpiece"]
+  },
+  {"tag": "Vibration",
+    "patterns": ["vibration", "weak fixturing", "tool overhang too long"],
+    "responses": ["check clamping of workpiece and tool", "minimize overhang", "check tool holder run out", "choose a tool with fewer teeth", "increase number of passes", "increase feed per tooth", "reduce cutting speed", "use up-milling in finishing"]
+  },
+  {"tag": "recutting of chips",
+    "patterns": ["re-cutting of chips", "insufficient chip evacuation"],
+    "responses": ["use compressed air or large amounts of cutting fluid, prefarably through the tool", "reduce feed per tooth", "increase number of passes"]
+  },
+  {"tag": "notch wear",
+    "patterns": ["notch wear", "machince work hardening materials", "components with skin and scale"],
+    "responses": ["reduce cutting speed", "select a tougher grade", "increase cutting speed"]
+  },
+  {"tag": "machine inefficiency",
+    "patterns": ["machine inefficiency", "machine RPM is too low"],
+    "responses": ["reduce cutting speed before table speed", "use a smaller cutter and increase number of passes"]
+  },
+  {"tag": "conical threads",
+    "patterns": ["conical threads", "cutting forces too high"],
+    "responses": ["reduce tool length", "use up milling", "reduce feed", "increase number of passes", "use single row insert"]
+  },
+  {"tag": "broken cutter",
+    "patterns": ["broken cutter/ cutting edge", "bad chip evacuation", "load too big", "instability"],
+    "responses": ["use compressed air, emulsion or internal coolant", "divide cut into 2 or 3 passes", "reduce feed", "check/change tool holder"]
+  }
+]
+}
