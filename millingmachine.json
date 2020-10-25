@@ -1,0 +1,69 @@
+{"millingmachine": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+    "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["Bye", "See you later", "Goodbye"],
+    "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+  },
+  {"tag": "thanks",
+    "patterns": ["Thanks", "Thank you", "That's helpful"],
+    "responses": ["Happy to help!", "Any time!", "My pleasure"]
+  },
+  {"tag": "problem:not flat",
+    "patterns": ["The workpiece milled is not flat"],
+    "responses": ["Adjust the spindle bearing gaps", "Adjust the gib's gap"],
+    "context_filter": "not flat"
+  },
+  {"tag": "problem:shakes",
+    "patterns": ["The machine shakes when cutting workpiece"],
+    "responses": ["Retighten the machine", "Choose suitable cutting feed"]
+  },
+  {"tag": "problem:heavy",
+    "patterns": ["Handle is feeling heavy"],
+    "responses": ["Adjust the wedge", "Adjust the gap", "Check the oil line and repair it", "Add oil", "Check the oil pump and oil line"]
+  },
+  {"tag": "problem:tight",
+    "patterns": ["The spindle sleeve is tight"],
+    "responses": ["Add oil", "Clean the spindle sleeve and repair it"]
+  },
+  {"tag": "problem:no coolant",
+    "patterns": ["no collant liquid"],
+    "responses": ["Check the water pump", "change the pump's rotation direction"]
+  },
+  {"tag": "problem:not smooth",
+    "patterns": ["The spindle feed is not smooth"],
+    "responses": ["Loosen the fixed bar"]
+  },
+  {"tag": "problem:spindle brake",
+    "patterns": ["The spindle brake does not work normally"],
+    "responses": ["change the brake circle"]
+  },
+  {"tag": "problem:spindle rotation",
+    "patterns": ["The spindle does not rotate"],
+    "responses": ["Check the power switch", "Adjust the belt", "Repair the motor"]
+  },
+  {"tag": "problem:Rotation direction",
+    "patterns": ["Wrong spindle rotation direction"],
+    "responses": ["change the switch indication position"]
+  },
+  {"tag": "problem:everyday maintenance",
+    "patterns": ["Everyday maintenance", "daily maintenance", "How to perform daily maintenance", "do daily maintenance"],
+    "responses": ["1) Check the coolant liquid level, and decide whether the liquid should be added 2) Check the lubrication pump's oil level, and decide whether the oil should be added. 3) Clean the spindle hole with clean cloth, then sprinkle some light oil. 4) Clean the scraps in the chuck to assure the accuracy 5) Clean the exposed limited switch to keep it from damage. 6) When choosing the coolant system, clean the messes in the chip tray in case of liquid outlet blocking 7) Keep the environment all round the machine clean. 8) The working light should be turned off in ten minutes after it is used for eight hours constantly, for fear that it works long time in high temperature and decrease the lifetime."]
+  },
+  {"tag": "problem:quarterly maintenance",
+    "patterns": ["Quarterly maintenance", "quarter", "How to perform quarterly maintenance", "do quarter maintenance"],
+    "responses": ["Clean or change the coolant liquid to keep it clean"]
+  },  
+  {"tag": "problem:semiannual maintenance",
+    "patterns": ["semiannual maintenance", "semiannual", "How to perform semiannual maintenance", "do semiannual maintenance"],
+    "responses": ["1) Check whether the scraper of every axis is ok and its effect. 2) Check whether the milling motor running normally. 3) Check whether the mechanical feed and travel switch are normal. 4) Check and adjust the machinery horizontal."]
+  },  
+  {"tag": "problem:annual maintenance",
+    "patterns": ["annual maintenance", "annually", "How to perform annual maintenance", "do annual maintenance"],
+    "responses": ["1) Check the vertical accuracy of every axis, then adjust 2) Check whether the lubrication oil tube and connector whether there are oil leak or damage"]
+  }  
+]
+}

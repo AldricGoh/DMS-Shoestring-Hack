@@ -1,0 +1,269 @@
+{"cnc": [ 
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+    "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["Bye", "See you later", "Goodbye"],
+    "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+  },
+  {"tag": "thanks",
+    "patterns": ["Thanks", "Thank you", "That's helpful"],
+    "responses": ["Happy to help!", "Any time!", "My pleasure"]
+  },
+  {"tag": "problem:umbrella tool",
+    "patterns": ["Noise for umbrella tool changing"],
+    "responses": ["Check the air pressure", "Check the milling chuck pull stud model", "Check the cylindrical travel", "Check the oil input"]
+  },
+  {"tag": "problem:umbrella tool",
+    "patterns": ["Can't change the umbrella tool"],
+    "responses": ["Check the air pressure", "Check the tool magazine manually if can't move, check the circuit breaker", "Check if tool magazine motor phase is right or not", "Check if the limit switch of tool loosening is in right position", "Check if the sensor switch is right or not", "Check if the tools is hit or the reference point is changing adjust 3-axis parameter according to P 2038(MITSUBISHI) or P1241(FANUC)"]
+  },
+  {"tag": "problem:umbrella tool",
+    "patterns": ["Umbrella tool number in chaos"],
+    "responses": ["Check if the motor phase", "Reset the tool magazine, and re-perform the procedure"]
+  },
+  {"tag": "problem:umbrella tool",
+    "patterns": ["Umbrella tool magazine keep rotation"],
+    "responses": ["Adjust the tool counter"]
+  },
+  {"tag": "problem:umbrella tool",
+    "patterns": ["Umbrella tool magazine not drawing back"],
+    "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back."]
+  },
+  {"tag": "problem:arm tool",
+    "patterns": ["Noise for arm tool changing"],
+    "responses": ["Check the air pressure", "Check the milling chuck pull stud model", "Check the cylindrical travel", "Adjust the second reference position, spindle positioning angle, spindle tool positioning spindle tool switch positioning etc."]
+  },
+  {"tag": "problem:arm tool",
+    "patterns": ["Can't change the arm tool"],
+    "responses": ["Check the air air pressure", "Check the tool magazine manually. If can't move, check the circuit breaker", "Check it tool magazine motor phase is right or not", "Check if the brake is too tight or too loosen", "Check the tool sleeve's tolerance", "Arm not back to zero, adjust the arm screw to ZERO point, when the power on is ok"]
+  },
+  {"tag": "problem:arm tool",
+    "patterns": ["Arm tool magazine not drawing back"],
+    "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back"]
+  },
+  {"tag": "problem:arm tool",
+    "patterns": ["Arm tool magazine not drawing back"],
+    "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back"]
+  },
+  {"tag": "problem:axis trouble",
+    "patterns": ["axis over limited"],
+    "responses": ["Press 'O.T.REL' key, use the handwheel rotate the axis to reverse direction", "Check if the limit switch is broken."]
+  },
+  {"tag": "problem:axis trouble",
+    "patterns": ["axis can't go back to zero"],
+    "responses": ["Check the limit switch is right set in the software or not", "Adjust or replace the ZERO block or SWITCH"]
+  },
+  {"tag": "problem:axis trouble",
+    "patterns": ["noise for axis"],
+    "responses": ["Clean the axis cover", "Change the bearing", "If it is from Z axis, check it is loosen for the hammer and guide way is loosen or not. Check if the hammer chain and guide wheel is wearing or not."]
+  },
+  {"tag": "problem:spindle trouble",
+    "patterns": ["spindle noise"],
+    "responses": ["Lubricate the spindle belt", "Adjust the belt tension", "Replace the spindle belt or spindle."]
+  },
+  {"tag": "problem:coolant pump",
+    "patterns": ["coolant pump can't drain"],
+    "responses": ["Check if the coolant liquid is enough or not.", "Input water to exclude the air inside the coolan tank", "Check the power sequence.", "Check the thermal relay", "Replace the coolant"]
+  },
+  {"tag": "problem:lubrication pump",
+    "patterns": ["lubrication pump trouble"],
+    "responses": ["Check if the lubrication oil is enough or not.", "Check the oil filter", "Check if the oil is SHELL TONA68 or equal one", "Adjust or replace the valve.", "Replace the pump."]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1000. EMG STOP OR OVERACTIVE", "Emergency stop"],
+    "responses": ["Emergency stop - Check if X8.4 is written or not"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1001. AXIS NOT HOME", "axis not home"],
+    "responses": ["Axis not home - Use handwheel to move axis back home"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1002. MC OL", "Machine alarm"],
+    "responses": ["Machine alarm - System alarming, check manual for FANUC/MITSUBISHI"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1003. LUBE LEVEL LOW", "Lubrication oil alarm"],
+    "responses": ["Lubrication oil alarm - input the oil or replace the pump"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1004. AIR PRESSURE LOW", "Low air pressure"],
+    "responses": ["Low air pressure - Check air pressure"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1005. SP COOLER ALARM", "spindle oil coolant"],
+    "responses": ["Spindle oil coolant - Input spindle coolant oil or replace the oil"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1006. HYDRAULIC PUMP PRESSURE LOW", "Oil pressure Low - Chose function"],
+    "responses": ["Oil pressure low - input oil"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1007. WORN GEAR", "Choose the high/low speed incorrectly"],
+    "responses": ["Choose the high/low speed incorrectly - adjust sensor switch"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1008. AXIS OT", "Axis limit over"],
+    "responses": ["Axis limit over - Press 'O.T.REL' and make the axis rever"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1009. BATTERY ALARM", "Battery alarm"],
+    "responses": ["Battery alarm - replace battery"]
+  },
+ {"intents": [
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1010. MAG NOT BACK", "ToolMagazine back home signal cannot be found - choose function"],
+    "responses": ["ToolMagazine back home signal cannot be found - Check the sensor switch"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1011. ATC MOTOR OL", "Tool magazine motor is over loaded"],
+    "responses": ["Tool magazine motor is overloaded - Check the thermal relay inside the electric cabinet"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1012. COOLANT MOTOR OL", "Coolant motor overloaded"],
+    "responses": ["Coolant motor overloaded - Check the thermal relay inside the electric cabinet"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1013. CHIP CONVEYOR OL", "Check chip conveyor motor overloaded"],
+    "responses": ["Chip conveyor motor overloaded - Check the thermal relay inside the electric cabinet"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1016. T CODE ERROR", "T code error"],
+    "responses": ["T code error - check T code"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1017. SPINDLE NOT ORIENTATION", "Spindle is not positioned"],
+    "responses": ["Spindle is not positioned - Move Z axis downward manually until the alarm disappear"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1018. ARM NOT IN ORIGIN", "No signal for the arm", "The arm is NOT in the middel poisiton"],
+    "responses": ["No signal for the arm - Chheck if the sensors are broken or not","The arm is not in middle position - Move the arm manually"]
+  },
+  {"tag": "problem:PLC alarm",
+    "patterns": ["1019. Z AXIS NOT IN ATC POSITION", "Z axis can't reach ATC"],
+    "responses": ["Z axis can't reach ATC - check if the 2nd home point of Z axis signal F96.2 is right or not"]
+  },
+ {"tag": "problem:tool not in position",
+    "patterns": ["not in positioned", "could not get the sensor signal"],
+    "responses": ["1) Make the tool magazine forward/backward rotation by hand to see if the alarm can be eliminated, if 1027 alarm appears, operate the magnetic valve, by hand and rotate the tool magazine by hand too, then eliminate the alarm 2) Check if the sensor switch is broken or not"]
+  },
+  {"tag": "problem:tool pot not down",
+    "patterns": ["tool collets cannot go down"],
+    "responses": ["Check the circuit"]
+  },
+  {"tag": "problem:tool no. not found",
+    "patterns": ["cannot find tool number"],
+    "responses": ["Please re-tidy the tool number"]
+  },
+  {"tag": "problem:arm 90 error",
+    "patterns": ["arm 90 degree error"],
+    "responses": ["Replace the sensor"]
+  },
+  {"tag": "problem:tool not unclamp",
+    "patterns": ["tool unclamp"],
+    "responses": ["Check the limit switch of tool loosen"]
+  },
+  {"tag": "problem:arm 270 error",
+    "patterns": ["arm 270 degree error"],
+    "responses": ["check the sensor switch"]
+  },
+  {"tag": "problem:tool pot not up",
+    "patterns": ["tool collects cannot go upward"],
+    "responses": ["Check sensor switch and circuit"]
+  },
+  {"tag": "problem:arm jog mode",
+    "patterns": ["arm jog mode error"],
+    "responses": ["Restart the controller"]
+  },
+  {"tag": "problem:tool not clamp",
+    "patterns": ["tool is not clamp well"],
+    "responses": ["Check the limit switch"]
+  },
+  {"tag": "problem:arm home pos error",
+    "patterns": ["arm home point error"],
+    "responses": ["check the sensor switch"]
+  },
+  {"tag": "problem:ATC LS error",
+    "patterns": ["ATC limit error"],
+    "responses": ["Check the spindle tool loosen/clamp can test the signal at the same time, adjust the limit position"]
+  },
+  {"tag": "problem:T CODE = SP",
+    "patterns": ["TCODE = Spindle tool"],
+    "responses": ["Reset the tool magazine when Tcode is not equal to spindle tool"]
+  },
+  {"tag": "problem:Door not close",
+    "patterns": ["door is not close"],
+    "responses": ["Shut the door"]
+  },
+  {"tag": "problem:4 axis clamp",
+    "patterns": ["The 4th axis is not clamped"],
+    "responses": ["Clmap the 4th well"]
+  },
+  {"tag": "problem:VMC540",
+    "patterns": ["Machine model: VMC 540", "Net Weight: 3500KG", "Main Power: 10KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 540, Net Weight: 3500KG, Main Power: 10KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "problem:VMC650",
+    "patterns": ["Machine model: VMC 650", "Net Weight: 4500KG", "Main Power: 15KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 650, Net Weight: 4500KG, Main Power: 15KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "problem:VMC850",
+    "patterns": ["Machine model: VMC 850", "Net Weight: 5300KG", "Main Power: 15KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 850, Net Weight: 5300KG, Main Power: 15KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "problem:VMC960",
+    "patterns": ["Machine model: VMC 960", "Net Weight: 4000KG", "Main Power: 15KVA", "Circuit breaker: 40A", "Power line diameter: 10mm2"],
+    "responses": ["Machine model: VMC 960, Net Weight: 4000KG, Main Power: 15KVA, Circuit breaker: 40A, Power line diameter: 10mm2"]
+  },
+  {"tag": "problem:VMC1060",
+    "patterns": ["Machine model: VMC 1060", "Net Weight: 8000KG", "Main Power: 20KVA", "Circuit breaker: 60A", "Power line diameter: 16mm2"],
+    "responses": ["Machine model: VMC 1060, Net Weight: 8000KG, Main Power: 20KVA, Circuit breaker: 60A, Power line diameter: 16mm2"]
+  },
+  {"tag": "problem:VMC1270",
+    "patterns": ["Machine model: VMC 1270", "Net Weight: 10000KG", "Main Power: 20KVA", "Circuit breaker: 60A", "Power line diameter: 16mm2"],
+    "responses": ["Machine model: VMC 1270, Net Weight: 10000KG, Main Power: 20KVA, Circuit breaker: 60A, Power line diameter: 16mm2"]
+  },
+  {"tag": "problem:VMC1370",
+    "patterns": ["Machine model: VMC 1370", "Net Weight: 12000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1370, Net Weight: 12000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "problem:VMC1580",
+    "patterns": ["Machine model: VMC 1580", "Net Weight: 15000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1580, Net Weight: 15000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "problem:VMC1690",
+    "patterns": ["Machine model: VMC 1690", "Net Weight: 18000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1690, Net Weight: 18000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "problem:VMC1890",
+    "patterns": ["Machine model: VMC 1890", "Net Weight: 18000KG", "Main Power: 35KVA", "Circuit breaker: 100A", "Power line diameter: 25mm2"],
+    "responses": ["Machine model: VMC 1890, Net Weight: 18000KG, Main Power: 35KVA, Circuit breaker: 100A, Power line diameter: 25mm2"]
+  },
+  {"tag": "problem:Machine's electric function",
+    "patterns": ["machine's electric function"],
+    "responses": ["1) Circuit Breakers are used as machine's overload and circuit short protect. 2) Soft limit and mechanic limit has been set on the machine."]
+  },
+  {"tag": "problem:Everyday Maintenance",
+    "patterns": ["Everyday Maintenance"],
+    "responses": ["As we required in Permeable, only electrician is allowed to do repair and maintain job for this machine. And the machine should meet with requirements below: 1) Check electronic oil pump to see that if lubrication oil is needed. 2) Check Oily water separator to see if the oil is enough or not. (If the oil falls below the indication, more oil is needed). 3) Check that if spindle huff is normal or not. 4) Clean the spindle with soft cloth, and lubricate it with 68# oil. 5) Clean every parts of ATC clearly. 6) Clean every blade tool. 7) Clean all the blocks and limit switch on the machine. 8)Drain hydrosphere in the oily water separator. 9) Keep the working area clean. 10) Clean every dust-anti window every day. 11) Check circuit breaker, contactor, relay, servo drive module etc. check if electric wire is loosened or not. 12) Grounded system must be closely and constantly. 13) Make sure that fan and spindle heat exchanger works well, or else it will cause damage to the electric components"]
+  },
+  {"tag": "problem:Every week Maintenance",
+    "patterns": ["Every week Maintenance"],
+    "responses": ["1) Clean the filter net of oil water separator and heat exchanger. 2) Clean the tool cover of Auto Tool Changer. 3) Check and clean limit switch. 4) Check if all warning labels are clear or not."]
+  },
+  {"tag": "problem:3M Maintenance",
+    "patterns": ["Check every three months Maintenance", "3 months"],
+    "responses": ["1) Clean or refresh the lubrication oil and oil-suck filter net. 2) Check parameters of every axis."]
+  },
+  {"tag": "problem:6M Maintenance",
+    "patterns": ["Check every six months Maintenance", "6 months"],
+    "responses": ["1) Clean or refresh the lubrication oil and oil-suck filter net. 2) Check parameters and origin of every axis. 3) Check that if every scrape is wearable or not. 4) Check if every servo motor and spindle runs in normal, if so contact manufacturer immediately. 5) Check lubrication and 6) Check and adjust the leveling of the machine."]
+  },
+  {"tag": "problem:every year Maintenance",
+    "patterns": ["Check every year Maintenance", "Yearly", "annually"],
+    "responses": ["1) Check the verticality of every axis, and adjust it. 2) Check if lubrication oil pipe is good or not. Warning: 1. Only professional operators are allowed to repair the Auto Tool Changer. 2. Others should be far away from working area."]
+  }
+]
+}
