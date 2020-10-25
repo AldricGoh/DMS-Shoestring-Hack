@@ -1,29 +1,42 @@
- {"intents": [
-  {"tag": "EDM",
+ {"edm": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+    "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["Bye", "See you later", "Goodbye"],
+    "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+  },
+  {"tag": "thanks",
+    "patterns": ["Thanks", "Thank you", "That's helpful"],
+    "responses": ["Happy to help!", "Any time!", "My pleasure"]
+  },
+  {"tag": "problem:EDM",
     "patterns": ["No power input"],
     "responses": ["No main power switch - Check power input", "Power lines loosened - Connect all lines closely", "Set emergency stop - reset it"]
   },
-  {"tag": "EDM",
+  {"tag": "problem:EDM",
     "patterns": ["Discharge - Hunting"],
     "responses": ["Line of electrode - Check power input", "If not on safe - enable it", "Value of GAP is too low - adjust the value"]
   },
-  {"tag": "EDM",
+  {"tag": "problem:EDM",
     "patterns": ["Discharge unstable"],
     "responses": ["Error Operation - 1. Electrode loosen 2. Negative discharge 3. Bad Servo sensibility 4. Wrong Discharge condition 5. Unsuitable oil supply", "Mechanic error - 1. Loosen electrode head 2. Conveyor Belt is too tight or too loose"]
   },
-  {"tag": "EDM",
+  {"tag": "problem:EDM",
     "patterns": ["Easy to Deposit Carbon"],
-    "responses": ["Power lines loosened - connect all lines closely", "Error Operation - 1. Negatively discharge 2. Unfit servo sensibility 3. Wrong discharging condition 4. Adjust parameters greatly 5. Wrong mode to supply oil", "Mechanic Error - 1. Loosened electrode head 2. Conveyor belt is too tight or too loose]
+    "responses": ["Power lines loosened - connect all lines closely", "Error Operation - 1. Negatively discharge 2. Unfit servo sensibility 3. Wrong discharging condition 4. Adjust parameters greatly 5. Wrong mode to supply oil", "Mechanic Error - 1. Loosened electrode head 2. Conveyor belt is too tight or too loose"]
   },
-  {"tag": "EDM",
+  {"tag": "problem:EDM",
     "patterns": ["Anti fire start while start discharging"],
     "responses": ["Flame appeared - 1. Adjust the oil and position and oil mass 2. Current is too large", "If the machine is greatly shined - 1. Adjust the sensibility of anti-fire 2. Move the machine out of sunshine"]
   },
-  {"tag": "EDM",
+  {"tag": "problem:EDM",
     "patterns": ["Trouble with DRO"],
     "responses": ["If the connector of cable are loosened - Tighten the connectors", "Check that if it counts or not at a certain position at 'Repeat position' mode - Change the Digital Ruler", "Check the ruler - communicate with supplier and change the ruler"]
   },
-  {"tag": "EDM",
+  {"tag": "problem:EDM",
     "patterns": ["No Processing Oil"],
     "responses": ["If oil pump still runs or not - 1. Oil pump runs in anti-cockwise direction 2. Start of processing oil 3. There is no oil in the oil hole of oil pump 4. Something jammed with oil pump 5. Trouble with oil pump", "No power input to oil pump - 1. If power connectors are loosned 2. Oil pump has been over loaded, enable it"]
   }
