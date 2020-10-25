@@ -8,51 +8,51 @@
     "patterns": ["Bye", "See you later", "Goodbye"],
     "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
   },
-  {"tag": "problem:umbrella tool",
+  {"tag": "problem:umbrella tool 1",
     "patterns": ["Noise for umbrella tool changing"],
     "responses": ["Check the air pressure", "Check the milling chuck pull stud model", "Check the cylindrical travel", "Check the oil input"]
   },
-  {"tag": "problem:umbrella tool",
+  {"tag": "problem:umbrella tool 2",
     "patterns": ["Can't change the umbrella tool"],
     "responses": ["Check the air pressure", "Check the tool magazine manually if can't move, check the circuit breaker", "Check if tool magazine motor phase is right or not", "Check if the limit switch of tool loosening is in right position", "Check if the sensor switch is right or not", "Check if the tools is hit or the reference point is changing adjust 3-axis parameter according to P 2038(MITSUBISHI) or P1241(FANUC)"]
   },
-  {"tag": "problem:umbrella tool",
+  {"tag": "problem:umbrella tool 3",
     "patterns": ["Umbrella tool number in chaos"],
     "responses": ["Check if the motor phase", "Reset the tool magazine, and re-perform the procedure"]
   },
-  {"tag": "problem:umbrella tool",
+  {"tag": "problem:umbrella tool 4",
     "patterns": ["Umbrella tool magazine keep rotation"],
     "responses": ["Adjust the tool counter"]
   },
-  {"tag": "problem:umbrella tool",
+  {"tag": "problem:umbrella tool 5",
     "patterns": ["Umbrella tool magazine not drawing back"],
     "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back."]
   },
-  {"tag": "problem:arm tool",
+  {"tag": "problem:arm tool 1",
     "patterns": ["Noise for arm tool changing"],
     "responses": ["Check the air pressure", "Check the milling chuck pull stud model", "Check the cylindrical travel", "Adjust the second reference position, spindle positioning angle, spindle tool positioning spindle tool switch positioning etc."]
   },
-  {"tag": "problem:arm tool",
+  {"tag": "problem:arm tool 2",
     "patterns": ["Can't change the arm tool"],
     "responses": ["Check the air air pressure", "Check the tool magazine manually. If can't move, check the circuit breaker", "Check it tool magazine motor phase is right or not", "Check if the brake is too tight or too loosen", "Check the tool sleeve's tolerance", "Arm not back to zero, adjust the arm screw to ZERO point, when the power on is ok"]
   },
-  {"tag": "problem:arm tool",
+  {"tag": "problem:arm tool 3",
     "patterns": ["Arm tool magazine not drawing back"],
     "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back"]
   },
-  {"tag": "problem:arm tool",
+  {"tag": "problem:arm tool 4",
     "patterns": ["Arm tool magazine not drawing back"],
     "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back"]
   },
-  {"tag": "problem:axis trouble",
+  {"tag": "problem:axis trouble 1",
     "patterns": ["axis over limited"],
     "responses": ["Press 'O.T.REL' key, use the handwheel rotate the axis to reverse direction", "Check if the limit switch is broken."]
   },
-  {"tag": "problem:axis trouble",
+  {"tag": "problem:axis trouble 2",
     "patterns": ["axis can't go back to zero"],
     "responses": ["Check the limit switch is right set in the software or not", "Adjust or replace the ZERO block or SWITCH"]
   },
-  {"tag": "problem:axis trouble",
+  {"tag": "problem:axis trouble 3",
     "patterns": ["noise for axis"],
     "responses": ["Clean the axis cover", "Change the bearing", "If it is from Z axis, check it is loosen for the hammer and guide way is loosen or not. Check if the hammer chain and guide wheel is wearing or not."]
   },
@@ -68,76 +68,76 @@
     "patterns": ["lubrication pump trouble"],
     "responses": ["Check if the lubrication oil is enough or not.", "Check the oil filter", "Check if the oil is SHELL TONA68 or equal one", "Adjust or replace the valve.", "Replace the pump."]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 1",
     "patterns": ["1000. EMG STOP OR OVERACTIVE", "Emergency stop"],
     "responses": ["Emergency stop - Check if X8.4 is written or not"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 2",
     "patterns": ["1001. AXIS NOT HOME", "axis not home"],
     "responses": ["Axis not home - Use handwheel to move axis back home"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 3",
     "patterns": ["1002. MC OL", "Machine alarm"],
     "responses": ["Machine alarm - System alarming, check manual for FANUC/MITSUBISHI"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 4",
     "patterns": ["1003. LUBE LEVEL LOW", "Lubrication oil alarm"],
     "responses": ["Lubrication oil alarm - input the oil or replace the pump"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 5",
     "patterns": ["1004. AIR PRESSURE LOW", "Low air pressure"],
     "responses": ["Low air pressure - Check air pressure"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 6",
     "patterns": ["1005. SP COOLER ALARM", "spindle oil coolant"],
     "responses": ["Spindle oil coolant - Input spindle coolant oil or replace the oil"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 7",
     "patterns": ["1006. HYDRAULIC PUMP PRESSURE LOW", "Oil pressure Low - Chose function"],
     "responses": ["Oil pressure low - input oil"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 8",
     "patterns": ["1007. WORN GEAR", "Choose the high/low speed incorrectly"],
     "responses": ["Choose the high/low speed incorrectly - adjust sensor switch"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 9",
     "patterns": ["1008. AXIS OT", "Axis limit over"],
     "responses": ["Axis limit over - Press 'O.T.REL' and make the axis rever"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 10",
     "patterns": ["1009. BATTERY ALARM", "Battery alarm"],
     "responses": ["Battery alarm - replace battery"]
   },
   
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 11",
     "patterns": ["1010. MAG NOT BACK", "ToolMagazine back home signal cannot be found - choose function"],
     "responses": ["ToolMagazine back home signal cannot be found - Check the sensor switch"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 12",
     "patterns": ["1011. ATC MOTOR OL", "Tool magazine motor is over loaded"],
     "responses": ["Tool magazine motor is overloaded - Check the thermal relay inside the electric cabinet"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 13",
     "patterns": ["1012. COOLANT MOTOR OL", "Coolant motor overloaded"],
     "responses": ["Coolant motor overloaded - Check the thermal relay inside the electric cabinet"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 14",
     "patterns": ["1013. CHIP CONVEYOR OL", "Check chip conveyor motor overloaded"],
     "responses": ["Chip conveyor motor overloaded - Check the thermal relay inside the electric cabinet"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 15",
     "patterns": ["1016. T CODE ERROR", "T code error"],
     "responses": ["T code error - check T code"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 16",
     "patterns": ["1017. SPINDLE NOT ORIENTATION", "Spindle is not positioned"],
     "responses": ["Spindle is not positioned - Move Z axis downward manually until the alarm disappear"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 17",
     "patterns": ["1018. ARM NOT IN ORIGIN", "No signal for the arm", "The arm is NOT in the middel poisiton"],
     "responses": ["No signal for the arm - Chheck if the sensors are broken or not","The arm is not in middle position - Move the arm manually"]
   },
-  {"tag": "problem:PLC alarm",
+  {"tag": "problem:PLC alarm 18",
     "patterns": ["1019. Z AXIS NOT IN ATC POSITION", "Z axis can't reach ATC"],
     "responses": ["Z axis can't reach ATC - check if the 2nd home point of Z axis signal F96.2 is right or not"]
   },
@@ -261,31 +261,31 @@
     "patterns": ["Check every year Maintenance", "Yearly", "annually"],
     "responses": ["1) Check the verticality of every axis, and adjust it. 2) Check if lubrication oil pipe is good or not. Warning: 1. Only professional operators are allowed to repair the Auto Tool Changer. 2. Others should be far away from working area."]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM1",
     "patterns": ["No power input"],
     "responses": ["No main power switch - Check power input", "Power lines loosened - Connect all lines closely", "Set emergency stop - reset it"]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM2",
     "patterns": ["Discharge - Hunting"],
     "responses": ["Line of electrode - Check power input", "If not on safe - enable it", "Value of GAP is too low - adjust the value"]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM3",
     "patterns": ["Discharge unstable"],
     "responses": ["Error Operation - 1. Electrode loosen 2. Negative discharge 3. Bad Servo sensibility 4. Wrong Discharge condition 5. Unsuitable oil supply", "Mechanic error - 1. Loosen electrode head 2. Conveyor Belt is too tight or too loose"]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM4",
     "patterns": ["Easy to Deposit Carbon"],
     "responses": ["Power lines loosened - connect all lines closely", "Error Operation - 1. Negatively discharge 2. Unfit servo sensibility 3. Wrong discharging condition 4. Adjust parameters greatly 5. Wrong mode to supply oil", "Mechanic Error - 1. Loosened electrode head 2. Conveyor belt is too tight or too loose"]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM5",
     "patterns": ["Anti fire start while start discharging"],
     "responses": ["Flame appeared - 1. Adjust the oil and position and oil mass 2. Current is too large", "If the machine is greatly shined - 1. Adjust the sensibility of anti-fire 2. Move the machine out of sunshine"]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM6",
     "patterns": ["Trouble with DRO"],
     "responses": ["If the connector of cable are loosened - Tighten the connectors", "Check that if it counts or not at a certain position at 'Repeat position' mode - Change the Digital Ruler", "Check the ruler - communicate with supplier and change the ruler"]
   },
-  {"tag": "problem:EDM",
+  {"tag": "problem:EDM7",
     "patterns": ["No Processing Oil"],
     "responses": ["If oil pump still runs or not - 1. Oil pump runs in anti-cockwise direction 2. Start of processing oil 3. There is no oil in the oil hole of oil pump 4. Something jammed with oil pump 5. Trouble with oil pump", "No power input to oil pump - 1. If power connectors are loosned 2. Oil pump has been over loaded, enable it"]
   },
@@ -543,12 +543,12 @@
     "responses": ["use compressed air, emulsion or internal coolant", "divide cut into 2 or 3 passes", "reduce feed", "check/change tool holder"]
   },
   {"tag": "positive",
-    "patterns": ["Good","Thanks","Nice", "That works", "Perfect", "Awesome"],
+    "patterns": ["Good","Thanks","Nice", "That works", "Perfect", "Awesome", "yes"],
     "responses": ["Cheers!"]
   },
   {"tag": "negative",
-    "patterns": ["Nope", "Doesn't work", "Wrong", "Nothing happened", "No"],
-    "responses": ["Sorry!"]
+    "patterns": ["Nope", "Doesn't work", "Wrong", "Nothing happened", "No", "no", "sucks", "shit", "fuck"],
+    "responses": ["Sorry!", "Aplogies!"]
   }
 ]
 }
