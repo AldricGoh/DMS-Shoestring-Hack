@@ -108,7 +108,7 @@
     "patterns": ["1009. BATTERY ALARM", "Battery alarm"],
     "responses": ["Battery alarm - replace battery"]
   },
- {"intents": [
+  
   {"tag": "problem:PLC alarm",
     "patterns": ["1010. MAG NOT BACK", "ToolMagazine back home signal cannot be found - choose function"],
     "responses": ["ToolMagazine back home signal cannot be found - Check the sensor switch"]
