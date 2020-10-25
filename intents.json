@@ -45,14 +45,422 @@
     "patterns": ["The machine is located unsteadily", "The cutting condition is not good"],
     "responses": ["Retighten the machine", "Choose suitable cutting feed"]
   },
+  {"tag": "problem: umbrella tool 1",
+    "patterns": ["Noise for umbrella tool changing"],
+    "responses": ["Check the air pressure", "Check the milling chuck pull stud model", "Check the cylindrical travel", "Check the oil input"]
+  },
+  {"tag": "problem: umbrella tool 2",
+    "patterns": ["Can't change the umbrella tool"],
+    "responses": ["Check the air pressure", "Check the tool magazine manually if can't move, check the circuit breaker", "Check if tool magazine motor phase is right or not", "Check if the limit switch of tool loosening is in right position", "Check if the sensor switch is right or not", "Check if the tools is hit or the reference point is changing adjust 3-axis parameter according to P 2038(MITSUBISHI) or P1241(FANUC)"]
+  },
+  {"tag": "problem: umbrella tool 3",
+    "patterns": ["Umbrella tool number in chaos"],
+    "responses": ["Check if the motor phase", "Reset the tool magazine, and re-perform the procedure"]
+  },
+  {"tag": "problem: umbrella tool 4",
+    "patterns": ["Umbrella tool magazine keep rotation"],
+    "responses": ["Adjust the tool counter"]
+  },
+  {"tag": "problem: umbrella tool 5",
+    "patterns": ["Umbrella tool magazine not drawing back"],
+    "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back."]
+  },
+  {"tag": "problem: arm tool 1",
+    "patterns": ["Noise for arm tool changing"],
+    "responses": ["Check the air pressure", "Check the milling chuck pull stud model", "Check the cylindrical travel", "Adjust the second reference position, spindle positioning angle, spindle tool positioning spindle tool switch positioning etc."]
+  },
+  {"tag": "problem: arm tool 2",
+    "patterns": ["Can't change the arm tool"],
+    "responses": ["Check the air air pressure", "Check the tool magazine manually. If can't move, check the circuit breaker", "Check it tool magazine motor phase is right or not", "Check if the brake is too tight or too loosen", "Check the tool sleeve's tolerance", "Arm not back to zero, adjust the arm screw to ZERO point, when the power on is ok"]
+  },
+  {"tag": "problem: arm tool 3",
+    "patterns": ["Arm tool magazine not drawing back"],
+    "responses": ["Set Feed Rate knob as 0 under HANDWHEEL model, press RESET to get the tool magazine back"]
+  },
+  {"tag": "problem: axis trouble 1",
+    "patterns": ["axis over limited"],
+    "responses": ["Press 'O.T.REL' key, use the handwheel rotate the axis to reverse direction", "Check if the limit switch is broken."]
+  },
+  {"tag": "problem: axis trouble 2",
+    "patterns": ["axis can't go back to zero"],
+    "responses": ["Check the limit switch is right set in the software or not", "Adjust or replace the ZERO block or SWITCH"]
+  },
+  {"tag": "problem: axis trouble 3",
+    "patterns": ["noise for axis"],
+    "responses": ["Clean the axis cover", "Change the bearing", "If it is from Z axis, check it is loosen for the hammer and guide way is loosen or not. Check if the hammer chain and guide wheel is wearing or not."]
+  },
+  {"tag": "problem: spindle trouble",
+    "patterns": ["spindle noise"],
+    "responses": ["Lubricate the spindle belt", "Adjust the belt tension", "Replace the spindle belt or spindle."]
+  },
+  {"tag": "problem: coolant pump",
+    "patterns": ["coolant pump can't drain"],
+    "responses": ["Check if the coolant liquid is enough or not.", "Input water to exclude the air inside the coolan tank", "Check the power sequence.", "Check the thermal relay", "Replace the coolant"]
+  },
+  {"tag": "problem: lubrication pump",
+    "patterns": ["lubrication pump trouble"],
+    "responses": ["Check if the lubrication oil is enough or not.", "Check the oil filter", "Check if the oil is SHELL TONA68 or equal one", "Adjust or replace the valve.", "Replace the pump."]
+  },
+  {"tag": "problem: PLC alarm 1",
+    "patterns": ["1000. EMG STOP OR OVERACTIVE", "Emergency stop"],
+    "responses": ["Emergency stop - Check if X8.4 is written or not"]
+  },
+  {"tag": "problem: PLC alarm 2",
+    "patterns": ["1001. AXIS NOT HOME", "axis not home"],
+    "responses": ["Axis not home - Use handwheel to move axis back home"]
+  },
+  {"tag": "problem: PLC alarm 3",
+    "patterns": ["1002. MC OL", "Machine alarm"],
+    "responses": ["Machine alarm - System alarming, check manual for FANUC/MITSUBISHI"]
+  },
+  {"tag": "problem: PLC alarm 4",
+    "patterns": ["1003. LUBE LEVEL LOW", "Lubrication oil alarm"],
+    "responses": ["Lubrication oil alarm - input the oil or replace the pump"]
+  },
+  {"tag": "problem: PLC alarm 5",
+    "patterns": ["1004. AIR PRESSURE LOW", "Low air pressure"],
+    "responses": ["Low air pressure - Check air pressure"]
+  },
+  {"tag": "problem: PLC alarm 6",
+    "patterns": ["1005. SP COOLER ALARM", "spindle oil coolant"],
+    "responses": ["Spindle oil coolant - Input spindle coolant oil or replace the oil"]
+  },
+  {"tag": "problem: PLC alarm 7",
+    "patterns": ["1006. HYDRAULIC PUMP PRESSURE LOW", "Oil pressure Low - Chose function"],
+    "responses": ["Oil pressure low - input oil"]
+  },
+  {"tag": "problem: PLC alarm 8",
+    "patterns": ["1007. WORN GEAR", "Choose the high/low speed incorrectly"],
+    "responses": ["Choose the high/low speed incorrectly - adjust sensor switch"]
+  },
+  {"tag": "problem: PLC alarm 9",
+    "patterns": ["1008. AXIS OT", "Axis limit over"],
+    "responses": ["Axis limit over - Press 'O.T.REL' and make the axis rever"]
+  },
+  {"tag": "problem: PLC alarm 10",
+    "patterns": ["1009. BATTERY ALARM", "Battery alarm"],
+    "responses": ["Battery alarm - replace battery"]
+  },
+  {"tag": "problem: PLC alarm 11",
+    "patterns": ["1010. MAG NOT BACK", "ToolMagazine back home signal cannot be found - choose function"],
+    "responses": ["ToolMagazine back home signal cannot be found - Check the sensor switch"]
+  },
+  {"tag": "problem: PLC alarm 12",
+    "patterns": ["1011. ATC MOTOR OL", "Tool magazine motor is over loaded"],
+    "responses": ["Tool magazine motor is overloaded - Check the thermal relay inside the electric cabinet"]
+  },
+  {"tag": "problem: PLC alarm 13",
+    "patterns": ["1012. COOLANT MOTOR OL", "Coolant motor overloaded"],
+    "responses": ["Coolant motor overloaded - Check the thermal relay inside the electric cabinet"]
+  },
+  {"tag": "problem: PLC alarm 14",
+    "patterns": ["1013. CHIP CONVEYOR OL", "Check chip conveyor motor overloaded"],
+    "responses": ["Chip conveyor motor overloaded - Check the thermal relay inside the electric cabinet"]
+  },
+  {"tag": "problem: PLC alarm 15",
+    "patterns": ["1016. T CODE ERROR", "T code error"],
+    "responses": ["T code error - check T code"]
+  },
+  {"tag": "problem: PLC alarm 16",
+    "patterns": ["1017. SPINDLE NOT ORIENTATION", "Spindle is not positioned"],
+    "responses": ["Spindle is not positioned - Move Z axis downward manually until the alarm disappear"]
+  },
+  {"tag": "problem: PLC alarm 17",
+    "patterns": ["1018. ARM NOT IN ORIGIN", "No signal for the arm", "The arm is NOT in the middel poisiton"],
+    "responses": ["No signal for the arm - Chheck if the sensors are broken or not","The arm is not in middle position - Move the arm manually"]
+  },
+  {"tag": "problem: PLC alarm 18",
+    "patterns": ["1019. Z AXIS NOT IN ATC POSITION", "Z axis can't reach ATC"],
+    "responses": ["Z axis can't reach ATC - check if the 2nd home point of Z axis signal F96.2 is right or not"]
+  },
 
+  {"tag": "EDM",
+    "patterns": ["No power input"],
+    "responses": ["No main power switch - Check power input", "Power lines loosened - Connect all lines closely", "Set emergency stop - reset it"]
+  },
+  {"tag": "EDM",
+    "patterns": ["Discharge - Hunting"],
+    "responses": ["Line of electrode - Check power input", "If not on safe - enable it", "Value of GAP is too low - adjust the value"]
+  },
+  {"tag": "EDM",
+    "patterns": ["Discharge unstable"],
+    "responses": ["Error Operation - 1. Electrode loosen 2. Negative discharge 3. Bad Servo sensibility 4. Wrong Discharge condition 5. Unsuitable oil supply", "Mechanic error - 1. Loosen electrode head 2. Conveyor Belt is too tight or too loose"]
+  },
+  {"tag": "EDM",
+    "patterns": ["Easy to Deposit Carbon"],
+    "responses": ["Power lines loosened - connect all lines closely", "Error Operation - 1. Negatively discharge 2. Unfit servo sensibility 3. Wrong discharging condition 4. Adjust parameters greatly 5. Wrong mode to supply oil", "Mechanic Error - 1. Loosened electrode head 2. Conveyor belt is too tight or too loose"]
+  },
+  {"tag": "EDM",
+    "patterns": ["Anti fire start while start discharging"],
+    "responses": ["Flame appeared - 1. Adjust the oil and position and oil mass 2. Current is too large", "If the machine is greatly shined - 1. Adjust the sensibility of anti-fire 2. Move the machine out of sunshine"]
+  },
+  {"tag": "EDM",
+    "patterns": ["Trouble with DRO"],
+    "responses": ["If the connector of cable are loosened - Tighten the connectors", "Check that if it counts or not at a certain position at 'Repeat position' mode - Change the Digital Ruler", "Check the ruler - communicate with supplier and change the ruler"]
+  },
+  {"tag": "EDM",
+    "patterns": ["No Processing Oil"],
+    "responses": ["If oil pump still runs or not - 1. Oil pump runs in anti-cockwise direction 2. Start of processing oil 3. There is no oil in the oil hole of oil pump 4. Something jammed with oil pump 5. Trouble with oil pump", "No power input to oil pump - 1. If power connectors are loosned 2. Oil pump has been over loaded, enable it"]
+  },
+  {"tag": "not flat",
+    "patterns": ["The workpiece milled is not flat"],
+    "responses": ["Adjust the spindle bearing gaps", "Adjust the gib's gap"],
+    "context_filter": "not flat"
+  },
+  {"tag": "shakes",
+    "patterns": ["The machine shakes when cutting workpiece"],
+    "responses": ["Retighten the machine", "Choose suitable cutting feed"]
+  },
+  {"tag": "heavy",
+    "patterns": ["Handle is feeling heavy"],
+    "responses": ["Adjust the wedge", "Adjust the gap", "Check the oil line and repair it", "Add oil", "Check the oil pump and oil line"]
+  },
+  {"tag": "tight",
+    "patterns": ["The spindle sleeve is tight"],
+    "responses": ["Add oil", "Clean the spindle sleeve and repair it"]
+  },
+  {"tag": "no coolant",
+    "patterns": ["no collant liquid"],
+    "responses": ["Check the water pump", "change the pump's rotation direction"]
+  },
+  {"tag": "not smooth",
+    "patterns": ["The spindle feed is not smooth"],
+    "responses": ["Loosen the fixed bar"]
+  },
+  {"tag": "spindle brake",
+    "patterns": ["The spindle brake does not work normally"],
+    "responses": ["change the brake circle"]
+  },
+  {"tag": "spindle rotation",
+    "patterns": ["The spindle does not rotate"],
+    "responses": ["Check the power switch", "Adjust the belt", "Repair the motor"]
+  },
+  {"tag": "Rotation direction",
+    "patterns": ["Wrong spindle rotation direction"],
+    "responses": ["change the switch indication position"]
+  },
+  {"tag": "everyday maintenance",
+    "patterns": ["Everyday maintenance", "daily maintenance", "How to perform daily maintenance", "do daily maintenance"],
+    "responses": ["1) Check the coolant liquid level, and decide whether the liquid should be added 2) Check the lubrication pump's oil level, and decide whether the oil should be added. 3) Clean the spindle hole with clean cloth, then sprinkle some light oil. 4) Clean the scraps in the chuck to assure the accuracy 5) Clean the exposed limited switch to keep it from damage. 6) When choosing the coolant system, clean the messes in the chip tray in case of liquid outlet blocking 7) Keep the environment all round the machine clean. 8) The working light should be turned off in ten minutes after it is used for eight hours constantly, for fear that it works long time in high temperature and decrease the lifetime."]
+  },
+  {"tag": "quarterly maintenance",
+    "patterns": ["Quarterly maintenance", "quarter", "How to perform quarterly maintenance", "do quarter maintenance"],
+    "responses": ["Clean or change the coolant liquid to keep it clean"]
+  },  
+  {"tag": "semiannual maintenance",
+    "patterns": ["semiannual maintenance", "semiannual", "How to perform semiannual maintenance", "do semiannual maintenance"],
+    "responses": ["1) Check whether the scraper of every axis is ok and its effect. 2) Check whether the milling motor running normally. 3) Check whether the mechanical feed and travel switch are normal. 4) Check and adjust the machinery horizontal."]
+  },  
+  {"tag": "annual maintenance",
+    "patterns": ["annual maintenance", "annually", "How to perform annual maintenance", "do annual maintenance"],
+    "responses": ["1) Check the vertical accuracy of every axis, then adjust 2) Check whether the lubrication oil tube and connector whether there are oil leak or damage"]
+  },
+  {"tag": "Vibration",
+    "patterns": ["Vibration"],
+    "responses": ["The causes are: weak fixture, axially weak workpiece,too long tool overhang, milling square shoulder with weak spindle, irregular table feed, cutting data, bad stability, vibration in corners. Please pick one"]
+  },
+  {"tag": "Vibration1",
+    "patterns": ["weak fixture"],
+    "responses": ["Assess the direction of the cutting forces and provide adequate support or improve the fixture", "Reduce the cutting forces by decreasing the cutting depth, ap","Select a coarse and differentially pitched cutter with a more positive cutting action", "Select a geometry with a small corner radius and small parallel land","Select a fine-grain, uncoated insert, or a thinner coating", "Avoid machining where the workpiece has poor support against the cutting forces"]
+  },
+  {"tag": "Vibration2",
+    "patterns": ["Axially weak workpiece" ],
+    "responses": [". Consider a square shoulder cutter (90-degree entering angle) with positive geometry", "Select an insert with L-geometry", "Decrease axial cutting force-lower depth of cut, smaller corner radius and parallel land","Select a coarse-pitch cutter with differential pitch", "Check tool wear", "Check tool holder run-out", "improve clamping of tool"]
+  },
+  {"tag": "Vibration3",
+    "patterns": ["Too long tool overhang" ],
+    "responses": ["Minimize overhang", "Use coarse-pitch cutters with differential pitch", "Balance radial and axial cutting forces-45 degree entering angle, large corner radius or round insert cutter","Increate feed per tooth ", "Use a light-cutting insert geometry", "Reduce axial depth of cut", "Use up milling in finishing", "Use oversized cutters and Coromant Capto coupling adaptors","For sold carbide end mills and exchangeable-head mills, try a tool with fewer teeth and/or a higher helix angle"]
+  },
+  {"tag": "Vibration4",
+    "patterns": ["Milling square shoulder with weak spindle"],
+    "responses": ["Select smallest possible cutter diameter", "Select a positive and light-cutting cutter and insert", "Try up milling", "Check spindle deflection to see if acceptable for machine"]
+  },
+  {"tag": "Vibration5",
+    "patterns": ["Irregular table feed" ],
+    "responses": ["Try up millng", "Tighten machine fed mechanism: adjust the feed screw on CNC machine", "Adjust the locking screw or replace the ball screw on conventional machines"],
+  },
+  {"tag": "Vibration6",
+    "patterns": ["cutting data"],
+    "responses": ["Reduce cutting speed, vc","Increase feed, fz","Change cutting depth"]
+  },
+  {"tag": "Vibration7",
+    "patterns": ["Bad stability"],
+    "responses": ["Reduce overhang","Improve stability"]
+  },
+  {"tag": "Vibration8",
+    "patterns": ["vibration in corners"],
+    "responses": ["Program large corner radii with reduced feed rate"]
+  },
+  {"tag": "chip jamming",
+    "patterns": ["chip jamming","insert corner damage", "edge chipping and breakage", "re-cutting of chips"],
+    "responses": ["improve chip evacuation by using rich and well directed cutting fluid or compressed air", "Reduce feed", "Split deep cuts into several passes", "Try up milling in deep slotting", "Use coarse pitch cutters", "Use solid carbide end mills or exchangeable-head mills with two or maximum three cutting edges and/or a higher helix angle"]
+  },
+  {"tag": "re-cutting of chips",
+    "patterns": ["cutting edge fractures", "harmful for tool life and security", "chip jamming"],
+    "responses": ["Evacuate chips effectively by compressed air or copious cutting fluid flow- preferably internal coolant","Change cutter position and tool path strategy","Reduce feed","Split deep cuts into several passes"]
+  },
+  {"tag": "unsatisfactory surface finish",
+    "patterns": ["unsatisfactory surface finsih"],
+    "responses": ["The causes are: Excessive feed per revolution, built-up edge formation, back-cutting, workpiece frittering. Please choose one"]
+  },
+  {"tag": "unsatisfactory surface finish1",
+    "patterns": ["Excessive feed per revolution"],
+    "responses": ["Set cutter axially or classify inserts. Check height with indicator","Check spindle run-out and cutter mounting surfaces","Decrease feed per rev to max 70% of the width of the parallel land","Use wiper inserts if possible (for finishing operations)"]
+  },
+  {"tag": "unsatisfactory surface finish2",
+    "patterns": ["built-up edge formation"],
+    "responses": ["Increase cutting speed, Vc to elevate machining temperature","Turn off cutting fluid.","Use sharp cutting edge inserts with smooth rake side","Use positive insert geometry","Try a cermet grade with higher cutting data"]
+  },
+  {"tag": "unsatisfactory surface finish3",
+    "patterns": ["back-cutting"],
+    "responses": ["Check spindle tilt (approx.. 0.10 mm/1000 mm (0.004 inch/39 370 inch))","Arial run-out, TIR of spindle should not exceed 7 microns during finishing","Reduce the radial cutting forces (decrease the depth of cut, ap)","Select a smaller cutter diameter","Check the parallelism on the parallel lands and on wiper insert used (should not be standing on heel or toe","Make sure the cutter is not wobbling-adjust the mounting surfaces"]
+  },
+  {"tag": "unsatisfactory surface finish4",
+    "patterns": ["workpiece frittering"],
+    "responses": ["Decrease feed","Select a close of extra-close pitch cutter","Re-position the cutter to give a thinner chip at exit","Select a more suitable entering angle (45-degrees) and lighter cutting geometry","Choose a sharp insert","Monitor flank wear to avoid excessive wear"]
+  },
+  {"tag": "Burr formation",
+    "patterns": ["burr formation material specific - HRSA/stainless steel", "burr formation notch main wear mechanism"],
+    "responses": ["Use large radius giving low insert entry angle","Keep depth of cut below radius","Ap=0.5xradius"]
+  },
+  {"tag": "Machine power",
+    "patterns": ["machine power too low"],
+    "responses": ["Go from close to coarse pitch, i.e. fewer teeth", "A positive cutter is more power efficient than a negative cutter ", " Reduce cutting speed before table feed", "Use a smaller cutter and make several passes", "Reduce depth of cut, ap"]
+  },
+  {"tag": "Flank wear1",
+    "patterns": ["rapid wear causing poor surface finish or out of tolerance","Cutting speed too high", "insufficient wear resistance", "Feed,F2 too low"],
+    "responses": ["Reduce cutting speed,VC", "Select a more wear-resistant grade", "increase feed. FZ"]
+  },
+  {"tag": "Flank wear2",
+    "patterns": ["execessive wear causing short tool life","Vibration", "Re-cutting of chips", "Burr formation on component", "poor surface finish", "Heat generation", "Excessive noise"],
+    "responses": ["increase feed,fz", "Use down milling", "Evacuate chips effectively using compressed air", "Check recommended cutting data"]
+  },
+  {"tag": "Flank wear3",
+    "patterns": ["uneven wearing causing corner damage","Tool Run-out", "Vibration", "Short tool life", "Bad surface finish", "High nose level", "Radial forces too high"],
+    "responses": ["Reduce run-out below 0.02 mm (0.0008 inch)", "Check chuck and collet", "minimize tool protrusion", "Use fewer teeth in cut", "Choose a larger tool diameter", "for sold carbide end mills and exchangeable-head mills, select a higher helix geometry (gp ≥45˚), "Split axial cutting depth into more than one pass", "Reduce feed, "Reduce cutting speed", "HSM requires shallow passes", "improve clamping of tool and workpiece"]
+  },
+  {"tag": "Crater wear",
+    "patterns": ["excessive wear causing a weakend edge","cutting edge breakthrough on the trailing edge causes poor surface finish","Diffusion wear due to cutting temperatures that are too high on the rake face"],
+    "responses": ["Select an AI203 coated grade", "Select a positive insert geometry", "Reduce the speed to obtain a lower temperature, and then reduce the feed"]
+  },
+  {"tag": "plastic deformation",
+    "patterns": ["plastic deformation of edge, depression or flank impression","poor chip control","cutting temperature and pressure too high"],
+    "responses": ["Select a more wear resistant (harder) grade", "Reduce cutting speed, vC", "Reduce feed fZ"]
+  },
+  {"tag": "Chipping1",
+    "patterns": ["chip hammering","top side and support for insert damaged","poor surface texture and excessive flank wear","The chips are deflected against the cutting edge"],
+    "responses": ["Select a tougher grade", "Select an insert with a stronger cutting edge", "Increase cutting speed, vC", "Select a positive geometry", "Reduce feed at the beginning of cut", "Improve stability"]
+  },
+  {"tag": "Chipping2",
+    "patterns": ["Grade too brittle", "Insert geometry too weak", "Built-up edge"],
+    "responses": ["Select a tougher grade", "Select an insert with a stronger geometry", "Increase cutting speed or select a positive geometry", "Reduce feed at the beginning of cut"]
+  },
+  {"tag": "notch wear",
+    "patterns": ["notch wear","Work hardening materials", "Skin and scale"],
+    "responses": ["Reduce cutting speed", "Select a tougher grade", "Use a stronger geometry", "Use a cutting angle closer to 45 degrees", "Use round inserts for best result", "Use variable ap technique to prolong the wear"]
+  },
+  {"tag": "thermal cracks",
+    "patterns": ["small cracks perpendicular to the cutting edge","poor surface finish due to temperature variations", "Intermittent machining", "Varying cutting fuild supply"],
+    "responses": ["Select a tougher grade with better resistance to thermal shocks", "Cutting fluid should be applied copy or not at all"]
+  },
+  {"tag": "built-up edge1",
+    "patterns": ["built-up edge (BUE)","cutting edge frittering when the BUE is torn away","Cutting zone temperature is too low","Very sticky material, such as low-carbon steel stainless steel, and aluminium"],
+    "responses": ["Increase cutting speed","Change to a more suitable insert geometry"]
+  },
+  {"tag": "built-up edge 2",
+    "patterns": ["workpiece material is welded to the cutting edge","Low cutting speed, VC","Low feed, fZ","Negative cutting geometry","Poor surface finish"],
+    "responses": ["Increase cutting speed","Increase feed, fZ","Select a positive geometry","Use oil mist or cutting fluid"]
+  },
+  {"tag": "Plastic deformation1",
+    "patterns": ["plastic deformation then edge chipping","Excessive temperature in cutting zone","Inadequate supply of coolant","Wrong grade"],
+    "responses": ["Reduce the cutting speed, increase the number of infeeds OR Reduce the largest infeed depth, check the diameter before threading","Improve coolant supply","Choose a grade with better resistance to plastic deformation"]
+  },
+  {"tag": "plastic deformation2",
+    "patterns": ["BUE ripped away together with small amounts of insert material","Often occurs in stainless steel and low-carbon steel","Unsuitable grade or cutting edge temperature too low"],
+    "responses": ["Increase cutting speed","Choose an insert with good toughness, preferably PVD coated"]
+  },
+  {"tag": "insert breakage",
+    "patterns": ["Wrong turned diameter prior to threading","Infeed series too tough","Wrong grade","Poor chip control","Incorrect centre height"],
+    "responses": ["Turn to correct diameter before threading. 0.03-0.07 mm (0.001-0.003 inch) radially larger than max diameter for thread","Increase number of infeeds. Reduce size of the largest infeed","Choose a tougher grade","Change to C-geometry and use modified flank infeed","Correct centre height"]
+  },
+  {"tag": "rapid flank water",
+    "patterns": ["rapid flank water","Highly abrasive material","Cutting speed too high","Infeed depths too shallow","Insert is above centre line"],
+    "responses": ["Wrong grade Choose a more wear resistant grade","Reduce cutting speed","Reduce number of infeeds","Correct centre height"]
+  },
+  {"tag": "abnormal flank wear",
+    "patterns": ["abnormal flank wear", "Incorrect method for flank infeed","Insert inclination angle does not agree with the thread lead angle"],
+    "responses": ["Change method of flank infeed for F-and A-geometry: 3-5 from flank, for C-geometry: 1degree from flank","Change shim to obtain correct angle of inclination"]
+  },
+  {"tag": "vibration9",
+    "patterns": ["poor surface on the thread flank", "vibration","Incorrect workpiece clamping","Incorrect tool set-up","Incorrect cutting data","Incorrect centre height"],
+    "responses": ["Use soft jaws. When using tail stock optimize component centering hole and check pressure of tail stock/face driver","Minimize tool overhang, make sure the clamping sleeve for bars is not worn, use anti-vibration bars dedicated for thread turning","Increase cutting speed: if this does not help lower the speed dramatically and try F-geometry","Correct centre height"]
+  },
+  {"tag": "Chipping",
+    "patterns": ["chipping", "The part of tre cutting edge which is not in cut is damaged by chip hammering, leading to poor surface and excessive flank wear"],
+    "responses": ["increase cutting speed", "reduce feed at the beginning of the cut", "improve stability", "increase number of passes", "use a full-profile insert"]
+  },
+  {"tag": "BUE",
+    "patterns": ["Built-up edge", "BUE", "Poor surface finish and cutting edge frittering when the built-up edge is torn away", "cutting zone temperature is too low", "very sticky material, such as low-carbon steel, stainless steels and aluminium"],
+    "responses": ["increase cutting speed or feed", "use oil mist or cutting fluid"]
+  },
+  {"tag": "crater wear",
+    "patterns": ["crater wear", "excessive wear causing a weakened edge", "cutting edge breakthrough on the trailing edge leading to poor surface finish"],
+    "responses": ["Reduce speed to reduce temperature", "Reduce feed"]
+  },
+  {"tag": "thermal cracks",
+    "patterns": ["thermal cracks", "temperature variations from varying cutting fluid supply or intermittent machining leading to small cracks perpendicular to the cutting edge, insert frittering and poor surface finish"],
+    "responses": ["apply cutting fluid in large amounts, or not at all", "reduce cutting speed"]
+  },
+  {"tag": "plastic deformation",
+    "patterns": ["plastic deformation", "cutting temperature and pressure too high"],
+    "responses": ["reduce cutting speed", "reduce feed"]
+  },
+  {"tag": "flank wear",
+    "patterns": ["flank wear", "rapid wear causing poor surface finish or out of tolerance", "Excessive wear resulting in short tool life, burr formation on component, poor surface finish, heat generation and excessive noise", "uneven wear resulting in corner damage, short tool life, bad surface finish and high noise level"],
+    "responses": ["Restate one of the causes: The part of the cutting edge which is not in cut is damaged by chip hammering leading to poor surface and excessive flank wear, vibration, re-cutting of chips, Burr formation on component, poor surface finish, heat generation, excessive noise, tool run-out, short tool life, bad surface finish, high noise level, radial forces too high"]
+  },
+  {"tag": "Flank wear 1",
+    "patterns": ["The part of the cutting edge which is not in cut is damaged by chip hammering leading to poor surface and excessive flank wear"],
+    "responses": [" increase cutting speed", "Reduce feed at the beginning of the cut", "Improve stability", "Increase number of passes", "Use a full-profile insert"]
+  },
+   {"tag": "Flank wear 2",
+    "patterns": ["vibration", "re-cutting of chips", "Burr formation on component", "poor surface finish", "heat generation", "excessive noise"],
+    "responses": ["increase feed fz", "reduce speed", "use down milling", "evacuate chips effectively using compressed air", "check recommended cutting data"]
+  },
+  {"tag": "Flank wear 3",
+    "patterns": ["tool run-out", "short tool life", "bad surface finish", "high noise level", "radial forces too high"],
+    "responses": ["increase chuck and collet", "minimize tool overhang", "fewer teeth in cut", "split axial cutting depth ap, into more than one pass", "Reduce feed, fz", "reduce cutting speed, vc", "high speed machining requires shallow passes", "improve clamping of tool and workpiece"]
+  },
+  {"tag": "Vibration",
+    "patterns": ["vibration", "weak fixturing", "tool overhang too long"],
+    "responses": ["check clamping of workpiece and tool", "minimize overhang", "check tool holder run out", "choose a tool with fewer teeth", "increase number of passes", "increase feed per tooth", "reduce cutting speed", "use up-milling in finishing"]
+  },
+  {"tag": "recutting of chips",
+    "patterns": ["re-cutting of chips", "insufficient chip evacuation"],
+    "responses": ["use compressed air or large amounts of cutting fluid, prefarably through the tool", "reduce feed per tooth", "increase number of passes"]
+  },
+  {"tag": "notch wear",
+    "patterns": ["notch wear", "machince work hardening materials", "components with skin and scale"],
+    "responses": ["reduce cutting speed", "select a tougher grade", "increase cutting speed"]
+  },
+  {"tag": "machine inefficiency",
+    "patterns": ["machine inefficiency", "machine RPM is too low"],
+    "responses": ["reduce cutting speed before table speed", "use a smaller cutter and increase number of passes"]
+  },
+  {"tag": "conical threads",
+    "patterns": ["conical threads", "cutting forces too high"],
+    "responses": ["reduce tool length", "use up milling", "reduce feed", "increase number of passes", "use single row insert"]
+  },
+  {"tag": "broken cutter",
+    "patterns": ["broken cutter/ cutting edge", "bad chip evacuation", "load too big", "instability"],
+    "responses": ["use compressed air, emulsion or internal coolant", "divide cut into 2 or 3 passes", "reduce feed", "check/change tool holder"]
+  },
   {"tag": "positive",
     "patterns": ["Good","Thanks","Nice", "That works", "Perfect", "Awesome"],
     "responses": ["Cheers!"]
   },
-
   {"tag": "negative",
-    "patterns": ["Nope", "Doesn't work", "Wrong", "Nothing happened"],
+    "patterns": ["Nope", "Doesn't work", "Wrong", "Nothing happened", "No"],
     "responses": ["Sorry!"]
   }
 ]
